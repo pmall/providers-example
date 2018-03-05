@@ -2,6 +2,10 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
-$providers = glob(__DIR__ . '/config/*/*.php');
+$files = glob(__DIR__ . '/config/*/*.php');
 
-return new Ellipse\Container($providers);
+return new Ellipse\Container(array_reduce($files, function (array $providers, string $file): array {
+
+    return array_merge($providers, require $file);
+
+}, []));
