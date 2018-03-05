@@ -8,7 +8,10 @@
         }
     ],
     "require": {
-        "ellipse/container": "^0.4.8"
+        "ellipse/container": "0.4.8",
+        "ellipse/providers-http": "0.8.0",
+        "ellipse/providers-session": "0.2.0",
+        "services/dbal": "0.3.1"
     },
     "extra": {
         "providers": {
